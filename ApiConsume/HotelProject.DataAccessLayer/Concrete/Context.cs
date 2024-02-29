@@ -13,15 +13,12 @@ namespace HotelProject.DataAccessLayer.Concrete
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("server=DESKTOP-SDDC56F\\SQLEXPRESS;initial catalog=ApiDb;integrated security=true;TrustServerCertificate=True;\r\n");
-
         }
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<Staff> Staffs { get; set; }
         public DbSet<Subscribe> Subscribes { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
-
-
 
     }
 
