@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace HotelProject.BusinessLayer.Concrete
 {
-    internal class RoomManager : IRoomService
+    public class RoomManager : IRoomService
         //Dependency Enjection
     {
         private readonly IRoomDal _roomDal;
