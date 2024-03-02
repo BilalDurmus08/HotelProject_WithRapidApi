@@ -37,7 +37,15 @@ namespace HotelProject.WebApi
 
             builder.Services.AddScoped<ITestimonialDal, EfTestimonialDal>();
             builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
-
+            
+            //izin verdik
+            builder.Services.AddCors(opt =>
+            {
+                opt.AddPolicy("OtelApiCors", opts =>
+                {
+                    opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                });
+            });
 
             var app = builder.Build();
 
@@ -47,7 +55,8 @@ namespace HotelProject.WebApi
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-
+            //We used "Cors" that we already created.
+            app.UseCors("OtelApiCors");    
             app.UseAuthorization();
 
 
